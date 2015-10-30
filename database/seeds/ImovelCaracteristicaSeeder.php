@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Imovel;
-use App\Caracteristica;
+use App\Models\Imovel;
+use App\Models\Caracteristica;
 use Faker\Factory as Faker;
 
-class ImovelsCaracteristicasSeeder extends Seeder
+class ImovelCaracteristicaSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -21,7 +21,7 @@ class ImovelsCaracteristicasSeeder extends Seeder
 
         foreach(range(1, 100) as $index)
         {
-            DB::table('imovels_caracteristicas')->insert([
+            DB::table('imovel_caracteristica')->insert([
                'imovel_id' => $faker->randomElement($imovelIds),
                'caracteristica_id' => $faker->randomElement($caracteristicaIds),
                'numero' => $faker->randomElement($array = array ('2','3','1','0')),

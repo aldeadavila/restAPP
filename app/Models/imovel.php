@@ -9,17 +9,17 @@ class Imovel extends Model
 
   public function fotos()
   {
-    return $this->hasMany('App\foto');
+    return $this->hasMany('App\Models\Foto');
   }
 
   public function user()
   {
-    return $this->belongsTo('App\User');
+    return $this->belongsTo('App\Models\User');
   }
 
   public function caracteristicas()
   {
-    return $this->belongsToMany('App\caracteristica', 'imovels_caracteristicas', 'imovel_id', 'caracteristica_id');
+    return $this->belongsToMany('App\Models\Caracteristica', 'imovel_caracteristica')->withPivot('numero');
   }
 
 }

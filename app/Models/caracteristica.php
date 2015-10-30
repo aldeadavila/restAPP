@@ -11,6 +11,6 @@ class Caracteristica extends Model
     protected $fillable = ['nome', 'numero'];
 
     public function imovels() {
-    	return $this->belongsToMany('App\imovel', 'imovels_caracteristicas', 'caracteristica_id', 'imovel_id');
+    	return $this->belongsToMany('App\Models\Imovel', 'imovel_caracteristica')->withPivot('numero');
     }
 }

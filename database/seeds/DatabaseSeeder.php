@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(ImovelTableSeeder::class);
         $this->call(FotoTableSeeder::class);
         $this->call(CaracteristicaTableSeeder::class);
-        $this->call(ImovelsCaracteristicasSeeder::class);
+        $this->call(ImovelCaracteristicaSeeder::class);
 
 
         Model::reguard();

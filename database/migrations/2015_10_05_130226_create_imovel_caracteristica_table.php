@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateImovelsCaracteristicasTable extends Migration
+class CreateImovelCaracteristicaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateImovelsCaracteristicasTable extends Migration
      */
     public function up()
     {
-        Schema::create('imovels_caracteristicas', function (Blueprint $table) {
+        Schema::create('imovel_caracteristica', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('imovel_id');
             $table->integer('caracteristica_id');
@@ -28,6 +28,6 @@ class CreateImovelsCaracteristicasTable extends Migration
      */
     public function down()
     {
-        Schema::drop('imovels_caracteristicas');
+        Schema::drop('imovel_caracteristica');
     }
 }

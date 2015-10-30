@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Imovel;
 use App\Models\Foto;
+use App\Models\Caracteristica;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -75,8 +76,14 @@ class ImovelsController extends Controller
      */
     public function show($id)
     {
-        //
+        $imovel = Imovel::where('id', $id)->first();
+        $fotos = $imovel->fotos()->get();
+        $caracteristicas = $imovel->caracteristicas()->get();
+        $item = [$imovel, $fotos, $caracteristicas];
+
+        return $item;
     }
+
 
     /**
      * Show the form for editing the specified resource.
