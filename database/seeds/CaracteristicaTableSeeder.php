@@ -18,7 +18,8 @@ class CaracteristicaTableSeeder extends Seeder
     		['name' => 'churrasqueira'],
     		['name' => 'área de serviço'],
     		['name' => 'garagem'],
-    		['name' => 'lavanderia']
+    		['name' => 'lavanderia'],
+            ['name' => 'banheiros']
     	];
     	
        DB::table('caracteristicas')->insert($caracteristicas);

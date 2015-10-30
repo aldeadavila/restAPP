@@ -56,10 +56,14 @@ class ImovelsController extends Controller
         $imovel -> user_id = 1;
         $imovel -> save();
 
-        $foto = new Foto();
+        /*$foto = new Foto();
         $foto -> ruta = $request -> ruta;
         $foto -> nome = $request -> nome;
-        $foto -> nome = $descricao -> descricao; 
+        $foto -> nome = $descricao -> descricao; */
+
+        $caracteristicas = new Caracteristica();
+        $caracteristicas -> imovel_id = $request -> id;
+        $caracteristicas -> caracteristica_id = $request -> value;
 
          return response()->json(array(
                 "msg" => "Success",
